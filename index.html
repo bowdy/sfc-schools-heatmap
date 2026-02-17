@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
-        #map {{ width: 100vw; height: 100vh; }}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        #map { width: 100vw; height: 100vh; }
 
-        .panel {{
+        .panel {
             padding: 14px 18px;
             background: rgba(255,255,255,0.95);
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -25,154 +25,154 @@
             max-width: 340px;
             max-height: 90vh;
             overflow-y: auto;
-        }}
-        .panel h2 {{
+        }
+        .panel h2 {
             font-size: 17px;
             color: #1a1a2e;
             margin-bottom: 2px;
-        }}
-        .panel .total {{
+        }
+        .panel .total {
             font-size: 24px;
             font-weight: 800;
             color: #e63946;
-        }}
-        .panel .subtitle {{
+        }
+        .panel .subtitle {
             font-size: 12px;
             color: #666;
             margin-top: 2px;
-        }}
-        .panel .stats {{
+        }
+        .panel .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6px;
             margin: 10px 0;
             font-size: 12px;
-        }}
-        .panel .stat-box {{
+        }
+        .panel .stat-box {
             background: #f8f8f8;
             padding: 6px 8px;
             border-radius: 6px;
-        }}
-        .panel .stat-box .val {{
+        }
+        .panel .stat-box .val {
             font-size: 16px;
             font-weight: 700;
             color: #1a1a2e;
-        }}
-        .panel .stat-box .label {{
+        }
+        .panel .stat-box .label {
             color: #888;
             font-size: 11px;
-        }}
+        }
 
-        .controls {{
+        .controls {
             margin-top: 10px;
             border-top: 1px solid #eee;
             padding-top: 10px;
-        }}
-        .controls h4 {{
+        }
+        .controls h4 {
             font-size: 13px;
             color: #333;
             margin-bottom: 6px;
-        }}
-        .controls label {{
+        }
+        .controls label {
             display: block;
             font-size: 12px;
             padding: 2px 0;
             cursor: pointer;
-        }}
-        .controls label input {{
+        }
+        .controls label input {
             margin-right: 4px;
-        }}
+        }
 
-        .top-list {{
+        .top-list {
             margin-top: 10px;
             border-top: 1px solid #eee;
             padding-top: 8px;
-        }}
-        .top-list h4 {{
+        }
+        .top-list h4 {
             font-size: 13px;
             color: #333;
             margin-bottom: 4px;
-        }}
-        .top-item {{
+        }
+        .top-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 3px 0;
             border-bottom: 1px solid #f5f5f5;
             font-size: 11px;
-        }}
-        .top-item .rank {{ color: #999; width: 18px; }}
-        .top-item .name {{ flex: 1; color: #333; margin: 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-        .top-item .count {{ font-weight: 600; color: #e63946; white-space: nowrap; }}
+        }
+        .top-item .rank { color: #999; width: 18px; }
+        .top-item .name { flex: 1; color: #333; margin: 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .top-item .count { font-weight: 600; color: #e63946; white-space: nowrap; }
 
-        .legend-panel {{
+        .legend-panel {
             padding: 10px 14px;
             background: rgba(255,255,255,0.92);
             box-shadow: 0 1px 5px rgba(0,0,0,0.3);
             border-radius: 8px;
             font-size: 12px;
-        }}
-        .legend-panel h4 {{
+        }
+        .legend-panel h4 {
             font-size: 13px;
             color: #333;
             margin-bottom: 6px;
-        }}
-        .legend-row {{
+        }
+        .legend-row {
             display: flex;
             align-items: center;
             padding: 2px 0;
-        }}
-        .legend-dot {{
+        }
+        .legend-dot {
             width: 14px;
             height: 14px;
             border-radius: 50%;
             margin-right: 8px;
             flex-shrink: 0;
-        }}
-        .legend-swatch {{
+        }
+        .legend-swatch {
             width: 14px;
             height: 14px;
             margin-right: 8px;
             flex-shrink: 0;
             border: 1px solid #ccc;
-        }}
+        }
 
-        .search-box {{
+        .search-box {
             padding: 8px 12px;
             background: rgba(255,255,255,0.95);
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
             border-radius: 8px;
             min-width: 280px;
-        }}
-        .search-box input {{
+        }
+        .search-box input {
             width: 100%;
             padding: 6px 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 13px;
             outline: none;
-        }}
-        .search-box input:focus {{ border-color: #e63946; }}
-        .search-results {{
+        }
+        .search-box input:focus { border-color: #e63946; }
+        .search-results {
             max-height: 200px;
             overflow-y: auto;
             margin-top: 4px;
-        }}
-        .search-result {{
+        }
+        .search-result {
             padding: 5px 8px;
             cursor: pointer;
             font-size: 12px;
             border-bottom: 1px solid #f0f0f0;
-        }}
-        .search-result:hover {{ background: #f5f5f5; }}
-        .search-result .sr-name {{ font-weight: 600; color: #333; }}
-        .search-result .sr-meta {{ color: #888; font-size: 11px; }}
+        }
+        .search-result:hover { background: #f5f5f5; }
+        .search-result .sr-name { font-weight: 600; color: #333; }
+        .search-result .sr-meta { color: #888; font-size: 11px; }
 
-        .counter {{
+        .counter {
             font-size: 11px;
             color: #666;
             margin-top: 6px;
-        }}
+        }
     </style>
 </head>
 <body>
@@ -190,7 +190,7 @@
 
         // ── Color functions ──
         // For % metric (school markers + county choropleth)
-        function pctColor(pct) {{
+        function pctColor(pct) {
             if (pct >= 50) return '#67000d';
             if (pct >= 35) return '#a50f15';
             if (pct >= 25) return '#cb181d';
@@ -199,10 +199,10 @@
             if (pct >= 5)  return '#fc9272';
             if (pct > 0)   return '#fcbba1';
             return '#d9d9d9';
-        }}
+        }
 
         // For total pacts metric (county choropleth)
-        function totalColor(pacts) {{
+        function totalColor(pacts) {
             if (pacts > 10000) return '#67000d';
             if (pacts > 8000)  return '#a50f15';
             if (pacts > 5000)  return '#cb181d';
@@ -213,10 +213,10 @@
             if (pacts > 100)   return '#fee0d2';
             if (pacts > 0)     return '#fff5f0';
             return '#f7f7f7';
-        }}
+        }
 
         // For total pacts metric (school markers)
-        function totalMarkerColor(pacts) {{
+        function totalMarkerColor(pacts) {
             if (pacts >= 200) return '#67000d';
             if (pacts >= 100) return '#a50f15';
             if (pacts >= 50)  return '#cb181d';
@@ -225,28 +225,28 @@
             if (pacts >= 10)  return '#fc9272';
             if (pacts > 0)    return '#fcbba1';
             return '#d9d9d9';
-        }}
+        }
 
-        function pctRadius(pacts) {{
+        function pctRadius(pacts) {
             if (pacts >= 100) return 10;
             if (pacts >= 50) return 8;
             if (pacts >= 20) return 6;
             if (pacts >= 5) return 5;
             return 4;
-        }}
+        }
 
         // ── Map setup ──
-        const map = L.map('map', {{
+        const map = L.map('map', {
             center: [54.5, -3.5],
             zoom: 6,
             zoomControl: true,
-        }});
+        });
 
-        L.tileLayer('https://{{s}}.basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}{{r}}.png', {{
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a> | Data: <a href="https://smartphonefreechildhood.org">SFC</a>',
             subdomains: 'abcd',
             maxZoom: 18,
-        }}).addTo(map);
+        }).addTo(map);
 
         // ── State ──
         let activeView = 'heat'; // 'heat', 'markers', 'both', 'county'
@@ -256,23 +256,23 @@
 
         // ── Layers ──
         // Heat layer
-        function getHeatData() {{
+        function getHeatData() {
             const filtered = showSecondaryOnly
                 ? S.filter(s => s[10] >= 16 && s[9] <= 14)
                 : S;
-            if (activeMetric === 'pct') {{
+            if (activeMetric === 'pct') {
                 return filtered.map(s => [s[0], s[1], s[3] * 10]); // weight by pact_pct
-            }} else {{
+            } else {
                 return filtered.map(s => [s[0], s[1], s[2]]); // weight by pact count
-            }}
-        }}
+            }
+        }
 
-        const heatLayer = L.heatLayer(getHeatData(), {{
+        const heatLayer = L.heatLayer(getHeatData(), {
             radius: 20,
             blur: 25,
             maxZoom: 12,
             max: activeMetric === 'pct' ? 500 : 200,
-            gradient: {{
+            gradient: {
                 0.0: '#fff5f0',
                 0.2: '#fee0d2',
                 0.4: '#fcbba1',
@@ -282,65 +282,65 @@
                 0.8: '#cb181d',
                 0.9: '#a50f15',
                 1.0: '#67000d'
-            }}
-        }});
+            }
+        });
 
         // Marker cluster layer
-        const markers = L.markerClusterGroup({{
+        const markers = L.markerClusterGroup({
             chunkedLoading: true,
             maxClusterRadius: 50,
             spiderfyOnMaxZoom: true,
             showCoverageOnHover: false,
-            iconCreateFunction: function(cluster) {{
+            iconCreateFunction: function(cluster) {
                 const children = cluster.getAllChildMarkers();
                 let totalPacts = 0;
-                children.forEach(m => {{ totalPacts += m.options.pacts || 0; }});
+                children.forEach(m => { totalPacts += m.options.pacts || 0; });
                 let dim = 30;
                 if (totalPacts > 500) dim = 50;
                 else if (totalPacts > 100) dim = 40;
-                return L.divIcon({{
+                return L.divIcon({
                     html: '<div style="background:rgba(230,57,70,0.8);color:white;border-radius:50%;width:'+dim+'px;height:'+dim+'px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border:2px solid rgba(255,255,255,0.8);">' +
                         (totalPacts >= 1000 ? (totalPacts/1000).toFixed(1)+'k' : totalPacts) + '</div>',
                     className: '',
                     iconSize: [dim, dim]
-                }});
-            }}
-        }});
+                });
+            }
+        });
 
         // County choropleth layer
         let countyLayer = null;
 
-        function countyStyle(feature) {{
+        function countyStyle(feature) {
             const p = feature.properties;
             const val = activeMetric === 'pct' ? p.pact_pct : p.pacts;
             const color = activeMetric === 'pct' ? pctColor(val) : totalColor(val);
-            return {{
+            return {
                 fillColor: color,
                 weight: 1.5,
                 opacity: 1,
                 color: '#666',
                 fillOpacity: 0.7,
-            }};
-        }}
+            };
+        }
 
-        function onEachCounty(feature, layer) {{
-            layer.on({{
-                mouseover: function(e) {{
+        function onEachCounty(feature, layer) {
+            layer.on({
+                mouseover: function(e) {
                     const l = e.target;
-                    l.setStyle({{ weight: 3, color: '#333', fillOpacity: 0.85 }});
+                    l.setStyle({ weight: 3, color: '#333', fillOpacity: 0.85 });
                     l.bringToFront();
-                }},
-                mouseout: function(e) {{
+                },
+                mouseout: function(e) {
                     countyLayer.resetStyle(e.target);
-                }},
-                click: function(e) {{
+                },
+                click: function(e) {
                     const p = feature.properties;
                     const pctStr = p.pupils > 0 ? p.pact_pct + '%' : 'N/A';
                     let content = '<div style="min-width:200px">' +
                         '<div style="font-weight:700;font-size:14px;color:#1a1a2e">' + (p.county || p.name || 'Unknown') + '</div>';
-                    if (p.label) {{
+                    if (p.label) {
                         content += '<div style="font-size:11px;color:#888;margin:2px 0">' + p.label + '</div>';
-                    }}
+                    }
                     content += '<div style="margin:8px 0;display:grid;grid-template-columns:1fr 1fr;gap:6px">' +
                         '<div style="background:#fff5f0;padding:6px;border-radius:4px;text-align:center">' +
                             '<div style="font-size:20px;font-weight:800;color:#e63946">' + (p.pacts || 0).toLocaleString() + '</div>' +
@@ -354,34 +354,34 @@
                     '<div style="font-size:11px;color:#666">' + (p.school_count || 0) + ' schools</div>' +
                     '</div>';
                     L.popup().setLatLng(e.latlng).setContent(content).openOn(map);
-                }}
-            }});
-        }}
+                }
+            });
+        }
 
-        function buildCountyLayer() {{
+        function buildCountyLayer() {
             if (countyLayer) map.removeLayer(countyLayer);
-            countyLayer = L.geoJson(countiesGeo, {{
+            countyLayer = L.geoJson(countiesGeo, {
                 style: countyStyle,
                 onEachFeature: onEachCounty,
-                filter: function(feature) {{
+                filter: function(feature) {
                     return feature.properties.county != null;
-                }}
-            }});
+                }
+            });
             return countyLayer;
-        }}
+        }
 
-        function buildSfcLink(schoolId) {{
+        function buildSfcLink(schoolId) {
             return 'https://smartphonefreechildhood.org/parent-pact-results?school=' + schoolId;
-        }}
+        }
 
-        function addMarkers() {{
+        function addMarkers() {
             markers.clearLayers();
             let count = 0;
-            S.forEach(function(s) {{
+            S.forEach(function(s) {
                 if (showSecondaryOnly && !(s[10] >= 16 && s[9] <= 14)) return;
                 count++;
                 const fillColor = activeMetric === 'pct' ? pctColor(s[3]) : totalMarkerColor(s[2]);
-                const marker = L.circleMarker([s[0], s[1]], {{
+                const marker = L.circleMarker([s[0], s[1]], {
                     radius: pctRadius(s[2]),
                     fillColor: fillColor,
                     color: '#fff',
@@ -389,7 +389,7 @@
                     opacity: 0.9,
                     fillOpacity: 0.85,
                     pacts: s[2],
-                }});
+                });
 
                 const isSecondary = s[10] >= 16 && s[9] <= 14;
                 const level = isSecondary ? 'Secondary' : (s[10] <= 11 ? 'Primary' : 'Other');
@@ -412,47 +412,47 @@
                     '<div style="font-size:11px;color:#666">' + level + ' (ages ' + s[9] + '-' + s[10] + ')</div>' +
                     '<a href="' + buildSfcLink(s[7]) + '" target="_blank" style="font-size:11px;color:#e63946">View on SFC &rarr;</a>' +
                     '</div>',
-                    {{ maxWidth: 280 }}
+                    { maxWidth: 280 }
                 );
                 markers.addLayer(marker);
-            }});
+            });
             visibleSchools = count;
             updateCounter();
-        }}
+        }
 
-        function updateHeatData() {{
+        function updateHeatData() {
             heatLayer.setLatLngs(getHeatData());
-            heatLayer.setOptions({{ max: activeMetric === 'pct' ? 500 : 200 }});
+            heatLayer.setOptions({ max: activeMetric === 'pct' ? 500 : 200 });
             const filtered = showSecondaryOnly
                 ? S.filter(s => s[10] >= 16 && s[9] <= 14)
                 : S;
             visibleSchools = filtered.length;
             updateCounter();
-        }}
+        }
 
-        function setView(view) {{
+        function setView(view) {
             activeView = view;
             map.removeLayer(heatLayer);
             map.removeLayer(markers);
             if (countyLayer) map.removeLayer(countyLayer);
 
-            if (view === 'heat' || view === 'both') {{
+            if (view === 'heat' || view === 'both') {
                 map.addLayer(heatLayer);
                 updateHeatData();
-            }}
-            if (view === 'markers' || view === 'both') {{
+            }
+            if (view === 'markers' || view === 'both') {
                 addMarkers();
                 map.addLayer(markers);
-            }}
-            if (view === 'county') {{
+            }
+            if (view === 'county') {
                 buildCountyLayer();
                 map.addLayer(countyLayer);
-            }}
+            }
 
             // Update radio buttons
-            document.querySelectorAll('input[name="view"]').forEach(r => {{
+            document.querySelectorAll('input[name="view"]').forEach(r => {
                 r.checked = r.value === view;
-            }});
+            });
 
             // Show/hide secondary filter (not relevant for county view)
             const secFilter = document.getElementById('secFilterWrap');
@@ -460,45 +460,45 @@
 
             updateLegend();
             updateLeaderboard();
-        }}
+        }
 
-        function setMetric(metric) {{
+        function setMetric(metric) {
             activeMetric = metric;
-            document.querySelectorAll('input[name="metric"]').forEach(r => {{
+            document.querySelectorAll('input[name="metric"]').forEach(r => {
                 r.checked = r.value === metric;
-            }});
+            });
 
             // Re-render active view
             if (activeView === 'heat' || activeView === 'both') updateHeatData();
             if (activeView === 'markers' || activeView === 'both') addMarkers();
-            if (activeView === 'county' && countyLayer) {{
+            if (activeView === 'county' && countyLayer) {
                 buildCountyLayer();
                 map.addLayer(countyLayer);
-            }}
+            }
 
             updateLegend();
             updateLeaderboard();
-        }}
+        }
 
         // Start with heat view
         map.addLayer(heatLayer);
 
-        function updateCounter() {{
+        function updateCounter() {
             const el = document.getElementById('counter');
-            if (el) {{
-                if (activeView === 'county') {{
+            if (el) {
+                if (activeView === 'county') {
                     el.textContent = 'County view';
-                }} else {{
+                } else {
                     el.textContent = visibleSchools.toLocaleString() + ' of ' + TOTAL_SCHOOLS.toLocaleString() + ' schools shown';
-                }}
-            }}
-        }}
+                }
+            }
+        }
 
-        function updateLegend() {{
+        function updateLegend() {
             const el = document.getElementById('legendContent');
             if (!el) return;
 
-            if (activeView === 'county' && activeMetric === 'total') {{
+            if (activeView === 'county' && activeMetric === 'total') {
                 el.innerHTML = '<h4>Total pacts</h4>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#67000d"></div>10,000+</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#a50f15"></div>8,000-10,000</div>' +
@@ -510,7 +510,7 @@
                     '<div class="legend-row"><div class="legend-swatch" style="background:#fee0d2"></div>100-500</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#fff5f0"></div>1-100</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#f7f7f7"></div>No data</div>';
-            }} else if (activeMetric === 'total') {{
+            } else if (activeMetric === 'total') {
                 el.innerHTML = '<h4>Total pacts</h4>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#67000d"></div>200+</div>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#a50f15"></div>100-200</div>' +
@@ -521,7 +521,7 @@
                     '<div class="legend-row"><div class="legend-dot" style="background:#fcbba1"></div>1-10</div>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#d9d9d9"></div>No data</div>' +
                     '<div style="margin-top:6px;font-size:10px;color:#888">Marker size = pact count</div>';
-            }} else if (activeView === 'county') {{
+            } else if (activeView === 'county') {
                 el.innerHTML = '<h4>Pact engagement %</h4>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#67000d"></div>50%+</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#a50f15"></div>35-50%</div>' +
@@ -531,7 +531,7 @@
                     '<div class="legend-row"><div class="legend-swatch" style="background:#fc9272"></div>5-10%</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#fcbba1"></div>1-5%</div>' +
                     '<div class="legend-row"><div class="legend-swatch" style="background:#d9d9d9"></div>No data</div>';
-            }} else {{
+            } else {
                 el.innerHTML = '<h4>Pact engagement %</h4>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#67000d"></div>50%+</div>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#a50f15"></div>35-50%</div>' +
@@ -542,17 +542,17 @@
                     '<div class="legend-row"><div class="legend-dot" style="background:#fcbba1"></div>1-5%</div>' +
                     '<div class="legend-row"><div class="legend-dot" style="background:#d9d9d9"></div>No data</div>' +
                     '<div style="margin-top:6px;font-size:10px;color:#888">Marker size = pact count<br>Marker colour = % of pupils</div>';
-            }}
-        }}
+            }
+        }
 
-        function updateLeaderboard() {{
+        function updateLeaderboard() {
             const el = document.getElementById('leaderboard');
             if (!el) return;
 
             const items = activeMetric === 'total' ? topByPacts : topByPct;
             const title = activeMetric === 'total' ? 'Top 15 schools by pacts' : 'Top 15 schools by %';
             let html = '<h4>' + title + '</h4>';
-            items.slice(0, 15).forEach(function(s, i) {{
+            items.slice(0, 15).forEach(function(s, i) {
                 const display = activeMetric === 'total'
                     ? s.p + ' (' + s.pct + '%)'
                     : s.pct + '% (' + s.p + ')';
@@ -561,20 +561,20 @@
                     '<span class="name" title="' + s.n + '">' + s.n + '</span>' +
                     '<span class="count">' + display + '</span>' +
                 '</div>';
-            }});
+            });
             el.innerHTML = html;
-        }}
+        }
 
         // ── Header panel ──
-        const header = L.control({{ position: 'topleft' }});
-        header.onAdd = function() {{
+        const header = L.control({ position: 'topleft' });
+        header.onAdd = function() {
             const div = L.DomUtil.create('div', 'panel');
 
             div.innerHTML =
                 '<h2>SFC Parent Pact</h2>' +
                 '<div style="font-size:13px;color:#555">School-Level Engagement</div>' +
                 '<div class="total">166,881 pacts signed</div>' +
-                '<div class="subtitle">Across 14,567 schools &middot; 16 February 2026</div>' +
+                '<div class="subtitle">Across 14,567 schools &middot; 17 February 2026</div>' +
                 '<div class="stats">' +
                     '<div class="stat-box"><div class="val">14,567</div><div class="label">Schools</div></div>' +
                     '<div class="stat-box"><div class="val">4.1%</div><div class="label">Avg engagement</div></div>' +
@@ -602,65 +602,65 @@
             L.DomEvent.disableClickPropagation(div);
             L.DomEvent.disableScrollPropagation(div);
             return div;
-        }};
+        };
         header.addTo(map);
 
         // Initialize leaderboard after panel is added
         updateLeaderboard();
 
-        function toggleSecondary(checked) {{
+        function toggleSecondary(checked) {
             showSecondaryOnly = checked;
             if (activeView === 'heat' || activeView === 'both') updateHeatData();
             if (activeView === 'markers' || activeView === 'both') addMarkers();
-        }}
+        }
 
         // ── Search ──
-        const search = L.control({{ position: 'topright' }});
-        search.onAdd = function() {{
+        const search = L.control({ position: 'topright' });
+        search.onAdd = function() {
             const div = L.DomUtil.create('div', 'search-box');
             div.innerHTML = '<input type="text" id="searchInput" placeholder="Search schools...">' +
                 '<div class="search-results" id="searchResults"></div>';
             L.DomEvent.disableClickPropagation(div);
             L.DomEvent.disableScrollPropagation(div);
             return div;
-        }};
+        };
         search.addTo(map);
 
-        document.getElementById('searchInput').addEventListener('input', function(e) {{
+        document.getElementById('searchInput').addEventListener('input', function(e) {
             const q = e.target.value.toLowerCase().trim();
             const results = document.getElementById('searchResults');
-            if (q.length < 2) {{ results.innerHTML = ''; return; }}
+            if (q.length < 2) { results.innerHTML = ''; return; }
 
             const matches = S.filter(s => s[4].toLowerCase().includes(q)).slice(0, 15);
-            results.innerHTML = matches.map(function(s) {{
+            results.innerHTML = matches.map(function(s) {
                 const pctStr = s[5] > 0 ? ' (' + s[3] + '%)' : '';
                 return '<div class="search-result" onclick="zoomTo(' + s[0] + ',' + s[1] + ',\''+s[4].replace(/'/g,"\\'")+'\','+s[2]+')">' +
                     '<div class="sr-name">' + s[4] + '</div>' +
                     '<div class="sr-meta">' + s[2] + ' pacts' + pctStr + ' &middot; ' + s[8] + '</div>' +
                 '</div>';
-            }}).join('');
-        }});
+            }).join('');
+        });
 
-        function zoomTo(lat, lng, name, pacts) {{
+        function zoomTo(lat, lng, name, pacts) {
             map.setView([lat, lng], 14);
-            if (activeView === 'heat' || activeView === 'county') {{
+            if (activeView === 'heat' || activeView === 'county') {
                 setView('both');
-            }}
+            }
             L.popup()
                 .setLatLng([lat, lng])
                 .setContent('<b>' + name + '</b><br>' + pacts + ' pacts signed')
                 .openOn(map);
             document.getElementById('searchResults').innerHTML = '';
             document.getElementById('searchInput').value = '';
-        }}
+        }
 
         // ── Legend ──
-        const legend = L.control({{ position: 'bottomright' }});
-        legend.onAdd = function() {{
+        const legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function() {
             const div = L.DomUtil.create('div', 'legend-panel');
             div.innerHTML = '<div id="legendContent"></div>';
             return div;
-        }};
+        };
         legend.addTo(map);
         updateLegend();
     </script>
