@@ -1,6 +1,8 @@
+.DS_Store
 data/*.js
 data/*.csv
 data/*.geojson
 data/postcode_geocodes.json
 __pycache__/
 *.pyc
+.vercel
